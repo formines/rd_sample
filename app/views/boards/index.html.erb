@@ -11,6 +11,16 @@
                      }
       %>
     <% end %>
+    <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :count,
+                      options_for_select([['1', '1'], ['10', 10], ['20', 20], ['30', 30]]),
+                      {
+                        prompt: 'ページ件数',
+                        class: 'form-control',
+                        onchange: 'submit(this.form);'
+                      } 
+      %>
+    <% end %>
     <%= link_to '新規作成', new_board_path, class: 'btn btn-outline-dark' %>
   </div>
 </div>
