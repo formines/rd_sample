@@ -7,7 +7,12 @@ class BoardsController < ApplicationController
     end
 
     def new
-      @board = Board.new
+      if @current_user
+        @board = Board.new
+      else
+        flash[:notice] = "投稿をする場合にはユーザ登録をする必要があります"
+        redirect_to new_user_path
+      end
     end
 
     def create
