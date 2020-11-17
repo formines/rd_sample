@@ -27,9 +27,11 @@
         </div>
       </li>
     </ul>
-    <div style="color: gainsboro; padding-right: 20px;">
-      ログインID：<%= @current_user.name %>
-    </div>
+    <% if @current_user %>
+      <div style="color: gainsboro; padding-right: 20px;">
+        ログインID：<%= @current_user.name %>
+      </div>
+    <% end %>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
