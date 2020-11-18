@@ -13,7 +13,9 @@
     <% end %>
     <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
       <%= select_tag :count,
-                      options_for_select([['1', '1'], ['10', 10], ['20', 20], ['30', 30]]),
+                      options_for_select([['1', '1'], ['10', 10], ['20', 20], ['30', 30]],
+                      selected: @page
+                      ),
                       {
                         prompt: 'ページ件数',
                         class: 'form-control',
